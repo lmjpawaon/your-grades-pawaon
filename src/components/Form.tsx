@@ -24,6 +24,25 @@ const Form: React.FC<FormProps> = ({setCourses}) => {
     
     const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
+
+      // Check if any input boxes are empty
+      if (!courseNo || !courseName || !courseUnits || !grade) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Check if units is 0
+      if (courseUnits === 0) {
+        alert('Units cannot be 0.');
+        return;
+      }
+
+      // Check if there is a selected radio button
+      if (!gradeToValue[grade]) {
+        alert('Please select a grade.');
+        return;
+      }
+
       const gradeValue = gradeToValue[grade] || 0;
       // Create an object with form data
       const formData: Course = {
@@ -55,7 +74,7 @@ const Form: React.FC<FormProps> = ({setCourses}) => {
 
   return (
     <div className="w-full p-4">
-    <h2 className="text-2xl font-semibold font-header">Add Course</h2>
+    <h2 className="text-2xl font-semibold font-header ">Add Course</h2>
 
     {/* Input Forms */}
     <form onSubmit={handleSubmit} className="mt-4 space-y-4 font-body">
@@ -115,7 +134,7 @@ const Form: React.FC<FormProps> = ({setCourses}) => {
         </div>
       </div>
       <div>
-        <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-md">
+        <button type="submit" className="px-4 py-2 bg-blue-ribbon-800 hover:bg-blue-ribbon-800/40 text-white rounded-md">
           Submit
         </button>
       </div>

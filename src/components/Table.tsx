@@ -46,7 +46,7 @@
         </div>
         <table className="w-full border-collapse border border-gray-300 font-body">
           <thead>
-            <tr>
+            <tr className='bg-blue-ribbon-300'>
               <th className="p-2 border">Course No</th>
               <th className="p-2 border">Course Name</th>
               <th className="p-2 border">Units</th>
@@ -63,10 +63,10 @@
               </tr>
             ))}
           <tr>
-            <td className="p-2 border font-bold" colSpan={3}>
+            <td className="p-2 border font-bold text-blue-ribbon-700" colSpan={3}>
               Total QPI:
             </td>
-            <td className="p-2 border no-border-left font-semibold italic">
+            <td className="p-2 border no-border-left font-semibold italic text-blue-ribbon-950">
               {totalUnits === 0 ? 'N/A' : (totalGradePoints / totalUnits).toFixed(2)}
             </td>
           </tr>
