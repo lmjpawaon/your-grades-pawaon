@@ -33,9 +33,9 @@
     }, [courses]);
   
     return (
-      <div className="w-1/2 p-4">
-        <h2 className="text-2xl font-semibold">Course List</h2>
-        <div className="mt-4 mb-4">
+      <div className="w-full p-4">
+        <h2 className="text-2xl font-semibold font-header">Course List</h2>
+        <div className="mt-4 mb-4 font-body">
           <input
             type="text"
             placeholder="Search by Course No or Course Name"
@@ -44,7 +44,7 @@
             className="w-full px-4 py-2 border rounded-md"
           />
         </div>
-        <table className="w-full border-collapse border border-gray-300">
+        <table className="w-full border-collapse border border-gray-300 font-body">
           <thead>
             <tr>
               <th className="p-2 border">Course No</th>
@@ -62,16 +62,16 @@
                 <td className="p-2 border">{course.grade}</td>
               </tr>
             ))}
+          <tr>
+            <td className="p-2 border font-bold" colSpan={3}>
+              Total QPI:
+            </td>
+            <td className="p-2 border no-border-left font-semibold italic">
+              {totalUnits === 0 ? 'N/A' : (totalGradePoints / totalUnits).toFixed(2)}
+            </td>
+          </tr>
           </tbody>
         </table>
-        {/* Total QPI */}
-        <div className="mt-4 text-right">
-        <div>
-          <p>Total Grade Points: {totalGradePoints}</p>
-          <p>Total Units: {totalUnits}</p>
-          <p>Total QPI: {totalUnits === 0 ? 'N/A' : (totalGradePoints / totalUnits).toFixed(2)}</p>
-        </div>
-        </div>
       </div>
       
     );
