@@ -1,17 +1,17 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
+import { useState } from 'react';
 import Form from "./components/Form"
 import Table from "./components/Table"
+import type { Course } from './types/types';
 
 function App() {
-  // const [count, setCount] = useState(0)
+
+  const [courses, setCourses] = useState<Course[]>([]);
+  console.log('Courses:', courses);
 
   return (
     <div className="flex justify-center items-center">
-      <Form/>
-      <Table/>
+      <Form setCourses={setCourses}/>
+      <Table courses={courses}/>
     </div>
   )
 }

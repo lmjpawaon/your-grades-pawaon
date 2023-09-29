@@ -1,6 +1,11 @@
 import React, {useState} from 'react'
+import type { Course } from '../types/types';
 
-const Form: React.FC  = () => {
+interface FormProps{
+  setCourses: React.Dispatch<React.SetStateAction<Course[]>>;
+}
+
+const Form: React.FC<FormProps> = ({setCourses}) => {
 
     const [courseNo, setCourseNo] = useState('');
     const [courseName, setCourseName] = useState('');
@@ -21,7 +26,7 @@ const Form: React.FC  = () => {
       e.preventDefault();
       const gradeValue = gradeToValue[grade] || 0;
       // Create an object with form data
-      const formData = {
+      const formData: Course = {
         courseNo,
         courseName,
         courseUnits,
@@ -29,10 +34,9 @@ const Form: React.FC  = () => {
         gradeValue,
       };
 
+      setCourses((prevCourses) => [...prevCourses, formData]);
       // Log the form data to the console for monitoring
       console.log('Form Data:', formData);
-      console.log('GradeValue:', gradeToValue);
-    
       // Retrieve existing entries from localStorage
       const existingEntries = JSON.parse(localStorage.getItem('courses') || '[]');
     
