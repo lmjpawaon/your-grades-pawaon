@@ -9,7 +9,7 @@ function App() {
   console.log('Courses:', courses);
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center lg:h-screen">
       <div className="lg:grid lg:grid-cols-5 ">
         <div className="col-span-2 bg-gray-100 p-4">
           <Form setCourses={setCourses} />
