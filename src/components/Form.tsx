@@ -74,20 +74,20 @@ const Form: React.FC<FormProps> = ({setCourses}) => {
 
   return (
     <div className="w-full p-4">
-    <h2 className="text-2xl font-semibold font-header ">Add Course</h2>
+    <h2 className="text-3xl font-bold font-header uppercase">Add Course</h2>
 
     {/* Input Forms */}
     <form onSubmit={handleSubmit} className="mt-4 space-y-4 font-body">
       <div>
         <label htmlFor="courseNo" className="block font-medium text-gray-800">
-          Course No
+          Course No.
         </label>
         <input
           type="text"
           id="courseNo"
           value={courseNo}
           onChange={(e) => setCourseNo(e.target.value)}
-          className="w-full px-4 py-2 border rounded-md"
+          className="w-full px-4 py-2 border rounded-md border-blue-ribbon-800"
           required
         />
       </div>
@@ -100,7 +100,7 @@ const Form: React.FC<FormProps> = ({setCourses}) => {
           id="courseName"
           value={courseName}
           onChange={(e) => setCourseName(e.target.value)}
-          className="w-full px-4 py-2 border rounded-md"
+          className="w-full px-4 py-2 border rounded-md border-blue-ribbon-800"
           required
         />
       </div>
@@ -113,7 +113,7 @@ const Form: React.FC<FormProps> = ({setCourses}) => {
           id="courseUnits"
           value={courseUnits}
           onChange={(e) => setCourseUnits(parseInt(e.target.value))}
-          className="w-full px-4 py-2 border rounded-md"
+          className="w-full px-4 py-2 border rounded-md border-blue-ribbon-800"
           required
         />
       </div>

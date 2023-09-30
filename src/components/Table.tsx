@@ -34,20 +34,20 @@
   
     return (
       <div className="w-full p-4">
-        <h2 className="text-2xl font-semibold font-header">Course List</h2>
+        <h2 className="text-3xl font-bold font-header uppercase">Course List</h2>
         <div className="mt-4 mb-4 font-body">
           <input
             type="text"
-            placeholder="Search by Course No or Course Name"
+            placeholder="Search by Course No. or Course Name"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md"
+            className="w-full px-4 py-2 border rounded-md border-blue-ribbon-800"
           />
         </div>
         <table className="w-full border-collapse border border-gray-300 font-body">
           <thead>
             <tr className='bg-blue-ribbon-300'>
-              <th className="p-2 border">Course No</th>
+              <th className="p-2 border">Course No.</th>
               <th className="p-2 border">Course Name</th>
               <th className="p-2 border">Units</th>
               <th className="p-2 border">Grade</th>
@@ -55,7 +55,7 @@
           </thead>
           <tbody>
             {filteredCourses.map((course, index) => (
-              <tr key={index}>
+              <tr key={index} className='hover:bg-blue-200'>
                 <td className="p-2 border">{course.courseNo}</td>
                 <td className="p-2 border">{course.courseName}</td>
                 <td className="p-2 border">{course.courseUnits}</td>
